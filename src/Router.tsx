@@ -1,0 +1,14 @@
+import { Route, Routes } from "react-router-dom";
+import { Subscribe } from "./components/Subscribe";
+import { Event } from "./pages/Event";
+
+export function Router() {
+  return (
+    <Routes>
+      <Route path="/" element={<Subscribe />} />
+      <Route path="event" element={<Event />}>
+        <Route path="lesson/:slug" element={<Event />} />
+      </Route>
+    </Routes>
+  );
+}
